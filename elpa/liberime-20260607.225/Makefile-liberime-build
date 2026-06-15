@@ -1,0 +1,14 @@
+LIBRIME = -lrime
+CC = gcc
+LDFLAGS = -shared
+SRC = src
+SOURCES = $(wildcard $(SRC)/*.c)
+OBJS = $(patsubst %.c, %.o, $(SOURCES))
+TARGET = $(SRC)/liberime-core.dylib
+CFLAGS = -fPIC -O2 -Wall -DHAVE_RIME_API -I /opt/homebrew/Cellar/emacs-plus@31/31.0.90/include/
+
+.PHONY:all objs
+all:$(TARGET)
+objs:$(OBJS)
+$(TARGET):$(OBJS)
+	$(CC) $(OBJS) $(LDFLAGS) $(LIBRIME) $(LIBS) -o $@
