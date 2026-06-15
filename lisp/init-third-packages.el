@@ -124,8 +124,8 @@
 (when (display-graphic-p)
   (set-frame-font "Consolas Nerd Font-16" nil t))
 
-;; ignore which-function-mode in treemacs error
 (defun my/disable-which-function-in-treemacs ()
+  "Inore Which-function-mode in treemacs error."
   (when (derived-mode-p 'treemacs-mode)
     (which-function-mode -1)))
 
