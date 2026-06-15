@@ -63,13 +63,6 @@
 (add-hook 'emacs-startup-hook #'efs/display-startup-time)
 
 ;;;###autoload
-(defun input-chinese-methods()
-  "Enable the Chinese input methods."
-  (interactive)
-  (require 'init-input-methods)
-  (toggle-input-method))
-
-;;;###autoload
 (defun treesit-install-language-grammar-all()
   "Install all treesit language grammar."
 
